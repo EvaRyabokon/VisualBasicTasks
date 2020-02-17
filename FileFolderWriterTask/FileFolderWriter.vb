@@ -3,12 +3,12 @@ Imports System.IO
 Module FileFolderWriter
     Sub Main(args As String())
 
-        Dim inputPath As String = Console.ReadLine() 'считываем путь с консоли
+        Dim inputPath As String = Console.ReadLine() 'СЃС‡РёС‚С‹РІР°РµРј РїСѓС‚СЊ СЃ РєРѕРЅСЃРѕР»Рё
         Dim folders() As String
         Dim folderPaths As String
 
         Try
-            folders = IO.Directory.GetDirectories(inputPath, "*", IO.SearchOption.TopDirectoryOnly) 'пытаемся получить перечень папок, находящихся в текущей папке по введеному пути
+            folders = IO.Directory.GetDirectories(inputPath, "*", IO.SearchOption.TopDirectoryOnly) 'РїС‹С‚Р°РµРјСЃСЏ РїРѕР»СѓС‡РёС‚СЊ РїРµСЂРµС‡РµРЅСЊ РїР°РїРѕРє, РЅР°С…РѕРґСЏС‰РёС…СЃСЏ РІ С‚РµРєСѓС‰РµР№ РїР°РїРєРµ РїРѕ РІРІРµРґРµРЅРѕРјСѓ РїСѓС‚Рё
 
         Catch ex As Exception
             Console.WriteLine("Error Geting File Directory")
@@ -32,12 +32,12 @@ Module FileFolderWriter
             
             sw = File.AppendText(strFile)
             
-            sw.WriteLine("Количество папок в текущей папке: " & 'записываем нужную информацию в файл
+            sw.WriteLine("РљРѕР»РёС‡РµСЃС‚РІРѕ РїР°РїРѕРє РІ С‚РµРєСѓС‰РµР№ РїР°РїРєРµ: " & 'Р·Р°РїРёСЃС‹РІР°РµРј РЅСѓР¶РЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ РІ С„Р°Р№Р»
                          folders.Count.ToString &
                          Environment.NewLine &
-                         "Время запуска: " & DateTime.Now  &
+                         "Р’СЂРµРјСЏ Р·Р°РїСѓСЃРєР°: " & DateTime.Now  &
                          Environment.NewLine &
-                         "Пути к папкам:" &
+                         "РџСѓС‚Рё Рє РїР°РїРєР°Рј:" &
                          Environment.NewLine &
                          folderPaths)
             sw.Close()
